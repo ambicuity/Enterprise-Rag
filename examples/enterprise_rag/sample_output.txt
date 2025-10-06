@@ -1,0 +1,24 @@
+================================================================================
+🔍 Enterprise RAG Pipeline Example
+================================================================================
+
+📂 Loading enterprise RAG pipeline...
+✓ Loaded 7 documents from data/real_world
+
+🧠 Query: Summarize key HR data compliance requirements.
+
+🚀 RAG Pipeline Result:
+================================================================================
+Answer:
+Employee data must comply with GDPR and HIPAA retention rules. All personal data must be retained for 7 years with full audit logs enabled. Access is restricted to authorized HR personnel only, and mandatory data anonymization is required for analytics purposes.
+
+Sources:
+ - compliance_summary.txt (hr_policies) [score: 1.00]
+ - employee_policy.txt (hr_policies) [score: 1.00]
+ - clinical_trial_protocol.txt (pharma_regulations) [score: 1.00]
+
+================================================================================
+💡 Try other queries:
+   python examples/enterprise_rag/run_pipeline.py "What are the financial approval thresholds for transactions?"
+   python examples/enterprise_rag/run_pipeline.py "Explain FDA safety reporting requirements for adverse events."
+================================================================================
