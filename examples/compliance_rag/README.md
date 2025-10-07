@@ -334,6 +334,26 @@ engine = create_engine('postgresql+psycopg2://user:pass@host:5432/db?sslmode=req
 
 ---
 
+## ⚙️ Configuration
+
+See [config_example.yaml](./config_example.yaml) for comprehensive compliance configuration including:
+- Authentication and access control
+- Data classification levels
+- PII detection settings
+- Audit logging configuration
+- Encryption settings
+- Compliance standards (HIPAA, GDPR, SOX, PCI-DSS, FDA)
+- Monitoring and alerts
+- Data retention policies
+
+---
+
+## 📋 Sample Output
+
+See [sample_output.txt](./sample_output.txt) for complete example output.
+
+---
+
 ## 🧪 Testing
 
 ### Test PII Detection

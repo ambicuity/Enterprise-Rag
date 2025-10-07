@@ -149,6 +149,22 @@ python examples/basic_rag/run_pipeline.py ./my_documents "Tell me about vacation
 
 ---
 
+## ⚙️ Configuration
+
+See [config_example.yaml](./config_example.yaml) for configuration options including:
+- Document paths and formats
+- Retrieval settings
+- Output preferences
+- Future enhancement options (embedding models, LLMs)
+
+---
+
+## 📋 Sample Output
+
+See [sample_output.txt](./sample_output.txt) for complete example output.
+
+---
+
 ## 🆚 Basic vs. Enterprise RAG
 
 | Feature | Basic RAG (This Example) | Enterprise RAG |

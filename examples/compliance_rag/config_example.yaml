@@ -1,0 +1,266 @@
+# Compliance-Focused RAG Configuration Example
+# For regulated industries: Healthcare, Finance, Legal, Pharma
+
+# Authentication & Access Control
+auth:
+  # User authentication (integrate with your IAM)
+  enabled: true
+  
+  # Identity provider (Okta, Auth0, Azure AD, etc.)
+  # provider: "okta"
+  # tenant_id: "your-tenant-id"
+  
+  # Session settings
+  session_timeout: 3600  # seconds
+  require_mfa: true
+
+# Data Classification
+classification:
+  # Default classification for new documents
+  default_level: "INTERNAL"
+  
+  # Classification levels (from least to most sensitive)
+  levels:
+    - "PUBLIC"
+    - "INTERNAL"
+    - "CONFIDENTIAL"
+    - "RESTRICTED"
+  
+  # Auto-classify based on keywords
+  auto_classify:
+    enabled: true
+    keywords:
+      RESTRICTED:
+        - "ssn"
+        - "social security"
+        - "credit card"
+        - "patient"
+        - "medical record"
+      CONFIDENTIAL:
+        - "confidential"
+        - "proprietary"
+        - "internal only"
+        - "gdpr"
+        - "hipaa"
+
+# PII Detection & Redaction
+pii:
+  # Enable PII detection
+  detection_enabled: true
+  
+  # Automatically redact detected PII
+  auto_redact: true
+  
+  # PII types to detect
+  detect_types:
+    - "email"
+    - "ssn"
+    - "phone"
+    - "credit_card"
+    - "ip_address"
+    - "date_of_birth"
+  
+  # PII detection sensitivity (low, medium, high)
+  sensitivity: "high"
+
+# Audit Logging
+audit:
+  # Enable comprehensive audit logging
+  enabled: true
+  
+  # Log all queries
+  log_queries: true
+  
+  # Log all document access
+  log_document_access: true
+  
+  # Log PII detection events
+  log_pii_events: true
+  
+  # Audit log storage
+  storage:
+    # Type: "file", "database", "siem"
+    type: "file"
+    path: "./audit_logs"
+    
+    # For SIEM integration:
+    # type: "siem"
+    # endpoint: "https://siem.company.com/api/logs"
+  
+  # Log retention period (days)
+  retention_days: 2555  # 7 years for compliance
+
+# Encryption
+encryption:
+  # Encrypt data at rest
+  at_rest:
+    enabled: true
+    algorithm: "AES-256-GCM"
+    # Key management service (KMS)
+    # kms_provider: "aws-kms"
+    # key_id: "your-key-id"
+  
+  # Encrypt data in transit
+  in_transit:
+    enabled: true
+    tls_version: "1.3"
+    # certificate_path: "/path/to/cert.pem"
+    # private_key_path: "/path/to/key.pem"
+
+# Access Control
+access_control:
+  # Role-based access control (RBAC)
+  rbac_enabled: true
+  
+  # Default role for new users
+  default_role: "viewer"
+  
+  # Role definitions
+  roles:
+    viewer:
+      permissions:
+        - "read_public"
+        - "read_internal"
+    
+    analyst:
+      permissions:
+        - "read_public"
+        - "read_internal"
+        - "read_confidential"
+    
+    admin:
+      permissions:
+        - "read_public"
+        - "read_internal"
+        - "read_confidential"
+        - "read_restricted"
+        - "manage_users"
+        - "export_audit_logs"
+
+# Retrieval Settings
+retrieval:
+  # Maximum documents to retrieve
+  top_k: 5
+  
+  # Enforce classification-based filtering
+  respect_classification: true
+  
+  # Minimum relevance score
+  min_score: 0.3
+
+# Citation & Source Tracking
+citations:
+  # Always include citations
+  required: true
+  
+  # Include classification in citations
+  show_classification: true
+  
+  # Include document ID for audit trail
+  show_document_id: true
+
+# Compliance Standards
+compliance:
+  # Industry regulations to enforce
+  standards:
+    - "HIPAA"
+    - "GDPR"
+    - "SOX"
+    - "PCI-DSS"
+    - "FDA-21-CFR-11"
+  
+  # HIPAA-specific settings
+  hipaa:
+    minimum_retention_years: 7
+    encryption_required: true
+    audit_required: true
+  
+  # GDPR-specific settings
+  gdpr:
+    data_subject_rights_enabled: true
+    consent_tracking: true
+    right_to_be_forgotten: true
+    response_time_days: 30
+  
+  # SOX-specific settings
+  sox:
+    dual_approval_required: true
+    financial_retention_years: 7
+  
+  # PCI-DSS settings
+  pci_dss:
+    cardholder_data_encryption: true
+    access_restriction: true
+    penetration_testing: true
+
+# Monitoring & Alerts
+monitoring:
+  # Enable security monitoring
+  enabled: true
+  
+  # Alert on suspicious activities
+  alerts:
+    # Alert on excessive PII queries
+    excessive_pii_queries:
+      enabled: true
+      threshold: 10  # queries per hour
+    
+    # Alert on unauthorized access attempts
+    unauthorized_access:
+      enabled: true
+    
+    # Alert on classification violations
+    classification_violations:
+      enabled: true
+  
+  # Alert destinations
+  alert_channels:
+    - "email"
+    - "slack"
+    - "pagerduty"
+
+# Data Retention
+retention:
+  # Document retention policy (days, 0 = indefinite)
+  documents:
+    PUBLIC: 0
+    INTERNAL: 365
+    CONFIDENTIAL: 2555  # 7 years
+    RESTRICTED: 3650   # 10 years
+  
+  # Audit log retention
+  audit_logs: 2555  # 7 years
+  
+  # Automatic deletion when retention period expires
+  auto_delete: false  # Set true for production
+
+# Backup & Recovery
+backup:
+  # Enable automatic backups
+  enabled: true
+  
+  # Backup frequency
+  frequency: "daily"
+  
+  # Backup retention
+  retention_days: 90
+  
+  # Encrypted backups
+  encryption: true
+
+# Output Settings
+output:
+  # Redact PII in all outputs
+  redact_pii: true
+  
+  # Include compliance metadata
+  include_compliance_metadata: true
+  
+  # Show data classification in responses
+  show_classification: true
+
+# Notes:
+# - This configuration is designed for regulated industries
+# - Consult with legal/compliance teams before production deployment
+# - Regular security audits are required
+# - Keep this configuration file secure and encrypted
