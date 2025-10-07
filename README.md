@@ -154,17 +154,38 @@ uvicorn src.api.main:app --reload
 
 ### 🧠 Real-World Example Demo
 
-This project includes realistic datasets for HR, Finance, and Pharma domains.
+This project includes **three complete example implementations** to help you get started at different levels:
 
-**Run the full pipeline:**
+#### 1. Basic RAG (Beginner-Friendly)
+Learn RAG fundamentals with a simple, educational example:
+```bash
+python examples/basic_rag/run_pipeline.py "How many vacation days do I get?"
+```
+
+**Features:**
+- Simple keyword-based retrieval
+- Built-in sample documents
+- Clear, commented code
+- Perfect for learning
+
+See: [examples/basic_rag/](examples/basic_rag/)
+
+#### 2. Enterprise RAG (Production-Ready)
+Full enterprise RAG pipeline with realistic datasets for HR, Finance, and Pharma domains:
 ```bash
 python examples/enterprise_rag/run_pipeline.py
 ```
 
+**Features:**
+- Hybrid search (BM25 + vector)
+- Multi-domain document handling
+- Reranking and caching
+- Production patterns
+
 **Example output:**
 ```
 🔍 Loading enterprise RAG pipeline...
-✓ Loaded 7 documents from data/real_world
+✓ Loaded 9 documents from data/real_world
 
 🧠 Query: Summarize key HR data compliance requirements.
 
@@ -181,7 +202,45 @@ Sources:
  - employee_policy.txt (hr_policies) [score: 1.00]
 ```
 
-See full example: [examples/enterprise_rag/](examples/enterprise_rag/)
+See: [examples/enterprise_rag/](examples/enterprise_rag/)
+
+#### 3. Compliance RAG (Regulated Industries)
+RAG with security and compliance features for finance, healthcare, legal, and pharma:
+```bash
+python examples/compliance_rag/run_pipeline.py analyst_001 "What are HIPAA requirements?"
+```
+
+**Features:**
+- PII detection and redaction
+- Complete audit logging
+- Data classification (PUBLIC, CONFIDENTIAL, RESTRICTED)
+- Access control simulation
+- Citation tracking with classifications
+
+**Example output:**
+```
+🔐 Compliance Analysis:
+Classification: CONFIDENTIAL
+PII Detected in Question: ✓ No
+PII Detected in Answer: ✓ No
+
+📋 Audit Trail:
+Total logged actions: 9
+Recent actions:
+  [2025-10-07T16:11:06.504370] AUTHORIZATION_CHECK: Access to CONFIDENTIAL document
+  [2025-10-07T16:11:06.504390] RETRIEVAL: Retrieved 3 documents
+  [2025-10-07T16:11:06.504430] ANSWER_GENERATED: Generated answer
+```
+
+See: [examples/compliance_rag/](examples/compliance_rag/)
+
+---
+
+### Learning Path
+
+1. **Start with Basic RAG** → Understand core concepts
+2. **Progress to Enterprise RAG** → Learn production patterns  
+3. **Explore Compliance RAG** → Add security and compliance
 
 ---
 

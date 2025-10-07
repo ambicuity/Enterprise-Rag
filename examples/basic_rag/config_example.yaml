@@ -1,0 +1,61 @@
+# Basic RAG Configuration Example
+# This is a simple configuration to demonstrate RAG concepts
+
+# Document Settings
+documents:
+  # Directory containing documents to process
+  path: "./sample_docs"
+  
+  # Supported file types
+  supported_formats:
+    - "txt"
+    - "md"
+  
+  # Number of top documents to retrieve
+  top_k: 3
+
+# Retrieval Settings (for future enhancement)
+retrieval:
+  # Method: "keyword" (basic) or "semantic" (with embeddings)
+  method: "keyword"
+  
+  # Minimum relevance score threshold
+  min_score: 0.1
+  
+  # For semantic search (when upgraded):
+  # embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  # vector_store: "chromadb"
+
+# Generation Settings (for future enhancement)
+generation:
+  # Method: "template" (basic) or "llm" (with AI model)
+  method: "template"
+  
+  # For LLM-based generation:
+  # model: "gpt-3.5-turbo"
+  # max_tokens: 500
+  # temperature: 0.7
+
+# Output Settings
+output:
+  # Include source citations
+  show_sources: true
+  
+  # Maximum answer length (characters)
+  max_answer_length: 1000
+  
+  # Show relevance scores
+  show_scores: true
+
+# Logging
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  
+  # Log to file
+  file: null  # Set to a path to enable file logging
+
+# Notes:
+# - This basic configuration shows the simplest RAG setup
+# - For production use, see examples/enterprise_rag/config_example.yaml
+# - For compliance features, see examples/compliance_rag/config_example.yaml

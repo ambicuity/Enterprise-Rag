@@ -1,0 +1,37 @@
+================================================================================
+🎓 Basic RAG Pipeline Example
+================================================================================
+
+This example demonstrates the three core steps of RAG:
+  1. Retrieval: Search for relevant documents
+  2. Augmentation: Add retrieved context to the query
+  3. Generation: Create an answer from the context
+
+================================================================================
+
+📂 Loading documents...
+✓ Loaded 5 documents
+
+❓ Question: How many vacation days do I get?
+
+💡 Answer:
+--------------------------------------------------------------------------------
+Based on the available information:
+
+Employees are entitled to 15 days of paid vacation per year. Vacation must be 
+requested at least 2 weeks in advance and approved by a manager. Unused vacation 
+days can be carried over to the next year, up to a maximum of 5 days.
+
+(Found 2 relevant document(s))
+--------------------------------------------------------------------------------
+
+📚 Sources:
+  • Company Vacation Policy (relevance score: 6)
+  • Remote Work Guidelines (relevance score: 1)
+
+================================================================================
+💡 Try other questions:
+   python examples/basic_rag/run_pipeline.py "Can I work from home?"
+   python examples/basic_rag/run_pipeline.py "What health benefits are available?"
+   python examples/basic_rag/run_pipeline.py "How much is the professional development budget?"
+================================================================================

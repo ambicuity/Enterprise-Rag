@@ -4,6 +4,34 @@ This directory contains example implementations demonstrating different RAG patt
 
 ## Structure
 
+## Structure
+
+Each example is a complete, working implementation with:
+- **README.md**: Detailed documentation and usage instructions
+- **run_pipeline.py**: Executable Python script (no external dependencies needed)
+- **config_example.yaml**: Configuration file template
+- **sample_output.txt**: Example output for reference
+- **sample_docs/**: Sample documents (basic_rag only)
+
+---
+
+## 📊 Comparison Table
+
+| Feature | Basic RAG | Enterprise RAG | Compliance RAG |
+|---------|-----------|----------------|----------------|
+| **Target Audience** | Beginners | Production teams | Regulated industries |
+| **Complexity** | Simple | Advanced | Enterprise + Security |
+| **LOC (code)** | ~270 | ~260 | ~430 |
+| **Documentation** | 9KB | 7.5KB | 12KB |
+| **Dependencies** | None (built-in) | None (mock) | None (mock) |
+| **Retrieval** | Keyword matching | Hybrid search (mock) | Keyword + classification |
+| **Data Source** | Built-in samples | Synthetic enterprise docs | Built-in compliance docs |
+| **Features** | 3 core RAG steps | Multi-domain, reranking | PII detection, audit logs |
+| **Learning Time** | 15-30 minutes | 1-2 hours | 2-4 hours |
+| **Production Ready** | ❌ Educational only | ✅ With modifications | ✅ With integration |
+
+---
+
 ### `basic_rag/`
 Simple RAG pipeline for getting started:
 - Basic document ingestion
@@ -42,22 +70,29 @@ Compliance-focused patterns for regulated industries:
 
 ### Basic RAG
 ```bash
-cd examples/basic_rag
-python run_pipeline.py --documents ./sample_docs
+# Run with built-in sample documents
+python examples/basic_rag/run_pipeline.py
+
+# Or with your own documents
+python examples/basic_rag/run_pipeline.py ./my_documents "How many vacation days?"
 ```
 
 ### Enterprise RAG
 ```bash
-cd examples/enterprise_rag
-docker-compose up -d
-python run_pipeline.py --config config.yaml
+# Run with sample enterprise data
+python examples/enterprise_rag/run_pipeline.py
+
+# Or with custom query
+python examples/enterprise_rag/run_pipeline.py "What are the financial approval thresholds?"
 ```
 
 ### Compliance RAG
 ```bash
-cd examples/compliance_rag
-export ENCRYPTION_KEY=your-key
-python run_pipeline.py --config compliance_config.yaml
+# Run with default user
+python examples/compliance_rag/run_pipeline.py
+
+# Or as specific user with custom query
+python examples/compliance_rag/run_pipeline.py analyst_001 "What are HIPAA requirements?"
 ```
 
 ## Example Features
