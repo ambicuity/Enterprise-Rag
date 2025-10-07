@@ -4,6 +4,34 @@ This directory contains example implementations demonstrating different RAG patt
 
 ## Structure
 
+## Structure
+
+Each example is a complete, working implementation with:
+- **README.md**: Detailed documentation and usage instructions
+- **run_pipeline.py**: Executable Python script (no external dependencies needed)
+- **config_example.yaml**: Configuration file template
+- **sample_output.txt**: Example output for reference
+- **sample_docs/**: Sample documents (basic_rag only)
+
+---
+
+## 📊 Comparison Table
+
+| Feature | Basic RAG | Enterprise RAG | Compliance RAG |
+|---------|-----------|----------------|----------------|
+| **Target Audience** | Beginners | Production teams | Regulated industries |
+| **Complexity** | Simple | Advanced | Enterprise + Security |
+| **LOC (code)** | ~270 | ~260 | ~430 |
+| **Documentation** | 9KB | 7.5KB | 12KB |
+| **Dependencies** | None (built-in) | None (mock) | None (mock) |
+| **Retrieval** | Keyword matching | Hybrid search (mock) | Keyword + classification |
+| **Data Source** | Built-in samples | Synthetic enterprise docs | Built-in compliance docs |
+| **Features** | 3 core RAG steps | Multi-domain, reranking | PII detection, audit logs |
+| **Learning Time** | 15-30 minutes | 1-2 hours | 2-4 hours |
+| **Production Ready** | ❌ Educational only | ✅ With modifications | ✅ With integration |
+
+---
+
 ### `basic_rag/`
 Simple RAG pipeline for getting started:
 - Basic document ingestion
