@@ -42,22 +42,29 @@ Compliance-focused patterns for regulated industries:
 
 ### Basic RAG
 ```bash
-cd examples/basic_rag
-python run_pipeline.py --documents ./sample_docs
+# Run with built-in sample documents
+python examples/basic_rag/run_pipeline.py
+
+# Or with your own documents
+python examples/basic_rag/run_pipeline.py ./my_documents "How many vacation days?"
 ```
 
 ### Enterprise RAG
 ```bash
-cd examples/enterprise_rag
-docker-compose up -d
-python run_pipeline.py --config config.yaml
+# Run with sample enterprise data
+python examples/enterprise_rag/run_pipeline.py
+
+# Or with custom query
+python examples/enterprise_rag/run_pipeline.py "What are the financial approval thresholds?"
 ```
 
 ### Compliance RAG
 ```bash
-cd examples/compliance_rag
-export ENCRYPTION_KEY=your-key
-python run_pipeline.py --config compliance_config.yaml
+# Run with default user
+python examples/compliance_rag/run_pipeline.py
+
+# Or as specific user with custom query
+python examples/compliance_rag/run_pipeline.py analyst_001 "What are HIPAA requirements?"
 ```
 
 ## Example Features

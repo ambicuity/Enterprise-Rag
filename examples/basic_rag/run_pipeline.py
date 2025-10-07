@@ -214,11 +214,21 @@ def main():
     print("=" * 80)
     print()
     
-    # Initialize pipeline
-    print("📂 Loading documents...")
-    documents_path = sys.argv[1] if len(sys.argv) > 1 else None
-    pipeline = SimpleRAGPipeline(documents_path)
-    print()
+    # Parse command line arguments
+    documents_path = None
+    question = None
+    
+    if len(sys.argv) > 1:
+        # Check if first arg is a path or a question
+        first_arg = sys.argv[1]
+        if Path(first_arg).exists() or first_arg.endswith('/') or '/' in first_arg:
+            # It's a path
+            documents_path = first_arg
+            if len(sys.argv) > 2:
+                question = " ".join(sys.argv[2:])
+        else:
+            # It's a question
+            question = " ".join(sys.argv[1:])
     
     # Example questions
     example_questions = [
@@ -228,11 +238,13 @@ def main():
         "How much is the professional development budget?",
     ]
     
-    # Get question from command line or use first example
-    if len(sys.argv) > 2:
-        question = " ".join(sys.argv[2:])
-    else:
+    if question is None:
         question = example_questions[0]
+    
+    # Initialize pipeline
+    print("📂 Loading documents...")
+    pipeline = SimpleRAGPipeline(documents_path)
+    print()
     
     # Run the query
     print(f"❓ Question: {question}")
