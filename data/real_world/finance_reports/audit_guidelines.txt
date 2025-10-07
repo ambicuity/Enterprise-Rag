@@ -1,0 +1,20 @@
+Title: Internal Audit Guidelines Q2 2024
+
+Document ID: FIN-AUD-2024-Q2
+Classification: Confidential
+
+Policy Summary:
+All transactions over $50,000 require dual approval.
+Audit evidence retention: 5 years.
+Quarterly risk assessment mandatory for all financial departments.
+
+Relevant Standards:
+- SOX 404 Compliance
+- IFRS Reporting Standards
+- GAAP Accounting Principles
+
+Key Controls:
+- Segregation of duties enforced
+- All financial transactions require supporting documentation
+- Monthly reconciliation of all accounts
+- Annual external audit mandatory

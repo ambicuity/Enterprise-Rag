@@ -1,0 +1,21 @@
+Title: Financial Controls Framework 2024
+
+Document ID: FIN-CTL-2024-001
+
+Internal Controls:
+- Dual authorization for payments over $10,000
+- Monthly bank reconciliation
+- Quarterly financial reporting to Board
+- Annual compliance audit
+
+Access Controls:
+- Role-based access to financial systems
+- Multi-factor authentication required
+- Quarterly access reviews
+- Immediate access revocation upon termination
+
+Documentation Requirements:
+- All expenses require receipts
+- Purchase orders mandatory for purchases over $1,000
+- Contract retention: 7 years
+- Audit trail for all transactions

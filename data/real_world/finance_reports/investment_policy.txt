@@ -1,0 +1,27 @@
+Title: Investment Policy Statement 2024
+
+Document ID: FIN-INV-2024-001
+Classification: Confidential
+
+Objectives:
+- Capital preservation
+- Liquidity maintenance
+- Risk-adjusted returns
+
+Authorized Investments:
+- U.S. Treasury securities
+- Investment-grade corporate bonds (rated A or higher)
+- Money market funds
+- FDIC-insured certificates of deposit
+
+Prohibited Investments:
+- Individual equities
+- Derivatives and options
+- Cryptocurrencies
+- Any security rated below investment grade
+
+Portfolio Guidelines:
+- Maximum single issuer concentration: 5%
+- Minimum credit rating: A
+- Maximum portfolio duration: 5 years
+- Quarterly rebalancing required

@@ -98,6 +98,12 @@ enterprise-rag/
 │   ├── data_generation/          # Synthetic data generation
 │   └── benchmarking/             # Performance benchmarking
 │
+├── data/                         # Real-world datasets (synthetic)
+│   └── real_world/               # Simulated enterprise documents
+│       ├── finance_reports/      # Financial documents and policies
+│       ├── hr_policies/          # HR policies and compliance
+│       └── pharma_regulations/   # Pharmaceutical regulations
+│
 ├── .gitignore
 ├── pyproject.toml
 ├── requirements.txt
@@ -145,6 +151,37 @@ python examples/basic_rag/run_pipeline.py
 # Start the API server
 uvicorn src.api.main:app --reload
 ```
+
+### 🧠 Real-World Example Demo
+
+This project includes realistic datasets for HR, Finance, and Pharma domains.
+
+**Run the full pipeline:**
+```bash
+python examples/enterprise_rag/run_pipeline.py
+```
+
+**Example output:**
+```
+🔍 Loading enterprise RAG pipeline...
+✓ Loaded 7 documents from data/real_world
+
+🧠 Query: Summarize key HR data compliance requirements.
+
+🚀 RAG Pipeline Result:
+================================================================================
+Answer:
+Employee data must comply with GDPR and HIPAA retention rules. All personal 
+data must be retained for 7 years with full audit logs enabled. Access is 
+restricted to authorized HR personnel only, and mandatory data anonymization 
+is required for analytics purposes.
+
+Sources:
+ - compliance_summary.txt (hr_policies) [score: 1.00]
+ - employee_policy.txt (hr_policies) [score: 1.00]
+```
+
+See full example: [examples/enterprise_rag/](examples/enterprise_rag/)
 
 ---
 

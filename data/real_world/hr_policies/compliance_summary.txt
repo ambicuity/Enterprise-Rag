@@ -1,0 +1,27 @@
+Title: HR Compliance Summary 2024
+
+Document ID: HR-COMP-2024-001
+
+Employment Law Compliance:
+- EEO-1 reporting: March 31 deadline
+- FMLA eligibility: 12 months service, 1,250 hours
+- FLSA overtime requirements enforced
+- I-9 verification within 3 days of hire
+
+Data Privacy:
+- GDPR compliance for EU employees
+- CCPA compliance for California residents
+- Annual privacy training required
+- Data breach notification within 72 hours
+
+Benefits Compliance:
+- ACA coverage for full-time employees
+- COBRA continuation coverage offered
+- ERISA compliance for retirement plans
+- Form 5500 filing deadline: July 31
+
+Recordkeeping:
+- Personnel files: 7 years post-termination
+- Payroll records: 3 years
+- I-9 forms: 3 years from hire or 1 year from termination
+- Benefits enrollment: 6 years

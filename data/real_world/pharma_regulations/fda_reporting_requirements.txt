@@ -1,0 +1,26 @@
+Title: FDA Drug Safety Reporting Protocol
+
+Document ID: PHARMA-FDA-2024-001
+
+Regulatory Framework:
+- 21 CFR Part 312 (IND Safety Reporting)
+- 21 CFR Part 314 (NDA Safety Reporting)
+- 21 CFR Part 11 (Electronic Records)
+
+Safety Reporting Timelines:
+- Fatal/Life-threatening: 7 days initial, 8 days follow-up
+- Serious unexpected: 15 days
+- Annual safety reports: 60 days from IND anniversary
+
+Data Retention:
+- Adverse event data logs in secure repositories
+- Retention period: Product lifetime + 10 years minimum
+- Electronic and paper records maintained
+
+Compliance Requirements:
+- Data residency must comply with 21 CFR Part 11
+- Electronic signatures and audit trails required
+- System validation documented
+- Regular compliance audits
+
+Applies to: Clinical, Regulatory, QA teams

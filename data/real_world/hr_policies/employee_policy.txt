@@ -1,0 +1,22 @@
+Title: Employee Data Protection Policy 2024
+
+Document ID: HR-POL-2024-001
+
+Summary:
+This document outlines HR data handling policies to comply with GDPR and HIPAA regulations.
+
+Key Points:
+- Employee data retention period: 7 years
+- Access restricted to authorized HR personnel
+- Audit logs retained for all employee data access
+- Mandatory data anonymization for analytics
+
+Compliance References:
+- EU GDPR Article 5
+- HIPAA Privacy Rule §164.530
+
+Data Security:
+- Encryption at rest and in transit
+- Multi-factor authentication required
+- Annual security training mandatory
+- Incident response plan in place
