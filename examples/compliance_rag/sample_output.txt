@@ -1,0 +1,59 @@
+================================================================================
+🔒 Compliance-Focused RAG Pipeline Example
+================================================================================
+
+This example demonstrates RAG with compliance and security features:
+  • PII Detection & Redaction
+  • Audit Logging
+  • Data Classification
+  • Access Control
+  • Citation Tracking
+
+================================================================================
+
+📂 Initializing compliance pipeline for user: analyst_001...
+✓ Loaded 5 classified documents
+
+❓ Question: What are HIPAA data retention requirements?
+
+🔐 Compliance Analysis:
+--------------------------------------------------------------------------------
+Classification: CONFIDENTIAL
+PII Detected in Question: ✓ No
+PII Detected in Answer: ✓ No
+--------------------------------------------------------------------------------
+
+💡 Answer:
+--------------------------------------------------------------------------------
+All patient records must be retained for a minimum of 7 years per HIPAA 
+regulations. Medical records for minors must be kept until the patient reaches 
+age 21. Electronic health records must be encrypted at rest and in transit using 
+AES-256. Access to patient data requires multi-factor authentication and is logged.
+
+Additional information from 1 related document(s).
+--------------------------------------------------------------------------------
+
+📚 Citations (with Classifications):
+  • [CONFIDENTIAL] Patient Data Retention Policy (ID: HIPAA-001)
+  • [CONFIDENTIAL] Data Subject Rights (ID: GDPR-002)
+
+📋 Audit Trail:
+--------------------------------------------------------------------------------
+Total logged actions: 8
+Recent actions:
+  [2025-10-07T16:23:45.123456] SYSTEM_INIT: Loaded 5 documents
+  [2025-10-07T16:23:45.234567] SEARCH: Query: what are hipaa data retention requirements?
+  [2025-10-07T16:23:45.345678] AUTHORIZATION_CHECK: Access to CONFIDENTIAL document HIPAA-001
+  [2025-10-07T16:23:45.456789] RETRIEVAL: Retrieved 2 documents
+  [2025-10-07T16:23:45.567890] ANSWER_GENERATED: Generated answer with classification: CONFIDENTIAL
+--------------------------------------------------------------------------------
+
+================================================================================
+💡 Try other questions:
+   python examples/compliance_rag/run_pipeline.py analyst_001 "Explain GDPR data subject rights"
+   python examples/compliance_rag/run_pipeline.py analyst_001 "What are SOX financial control requirements?"
+   python examples/compliance_rag/run_pipeline.py analyst_001 "How should adverse events be reported to the FDA?"
+
+Export audit log:
+   python -c "from run_pipeline import *; p = ComplianceRAGPipeline(); p.export_audit_log('audit.json')"
+================================================================================
